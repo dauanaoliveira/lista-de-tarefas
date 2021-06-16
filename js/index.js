@@ -106,8 +106,10 @@ function Tarefas() {
                         text: "Tarefa alterada com sucesso!",
                         icon: 'success',
                       }).then((result) => {
-                          tarefas.listarTarefas();
                           $('#form-tarefas .form-control').val('');
+                          $('#btn-alterar').addClass('d-none');
+                          $('#btn-salvar').removeClass('d-none');
+                          tarefas.listarTarefas();
                       })
                 } else {
                     tarefas.loadingClose();
